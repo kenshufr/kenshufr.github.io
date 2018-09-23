@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Work+Sans');
+
+* { 
+  box-sizing: border-box ;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+$grey: rgb(192,192,192);
+
+@import "_header.scss";
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-flow: column-reverse wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  @media only screen and (min-width:1120px) {
+    flex-flow: row wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .words {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1em;
+    text-align: left;
+
+    @media only screen and (min-width: 1120px) {
+      font-size: 2em;
+      width: 45%;
+      margin: 0 0 0 2%;
+    }
+
+    h2 {
+      margin-bottom: .4em;
+      font-size: .6em;
+      color: lightgrey;
+    }
+    .break {
+      margin: .5em 0;
+      width: 50%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: white;
+      animation: growleft 2s;
+      transform-origin: left;
+      -webkit-transform-origin: left;
+    }
+
+    .under-text {
+      display: flex;
+      flex-flow: row wrap;
+
+      .buttons {
+        cursor: pointer;
+        background: transparent;
+        border-color: white;
+        border: solid;
+        border-radius: 100px;
+        border-width: 2px;
+        padding: 8px 20px;
+        margin-top: .3em;
+        margin-right: 1em;
+        vertical-align: center;
+        text-transform: lowercase;
+        text-decoration: none;
+        font-size: .75em;
+        font-weight: 700;
+        line-height: 1.2em;
+
+        &:hover {
+          background: white;
+          color: rgb(97, 97, 97);
+          border-color: white;
+        }
+      }
+
+      img {
+        margin-right: .5em;
+        width: auto;
+        height: auto;
+        max-height: 1.5em;
+        max-width: 1.5em;
+      }
+    }
+    
+  } 
+  img {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    margin: 10px 1% 5% 1%;
+
+    @media only screen and (min-width: 760px) {
+      max-width: 600px;
+      max-height: 400px;
+    }
+  }
+
+
+  .chevron {
+    position: fixed;
+    bottom: 10px;
+    left: auto;
+    right: auto;
+    cursor: pointer;
+    
+    img {
+      width: auto;
+      height: auto;
+      max-height: 20px;
+      max-width: 40px;
+      animation: testbounce 4s infinite ease;
+    }
+  }
+}
+
+@import "_bg-colors.scss";
+
+section.contact {
+  .words { 
+    h2 {
+      color:  black;
+    }
+    .break {
+      background-color: grey;
+    }
+  }
+}
+
+// keyframe code below
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+@keyframes fadeup {
+  from {
+      opacity:0;
+      transform: translate3d(0, 100%, 0);
+      -webkit-transform: translate3d(0, 100%, 0);
+  }
+  to {
+      opacity:1;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes fadeup {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadedown {
+  from {
+      opacity:0;
+      transform: translate3d(0, -100%, 0);
+      -webkit-transform: translate3d(0, -100%, 0);
+  }
+  to {
+      opacity:1;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes fadedown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes growleft {
+  from {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+@keyframes testbounce {
+  0% {
+    transform: translateY(0); 
+    -webkit-transform: translateY(0);}
+  50% { 
+    transform: translateY(-100%); 
+    -webkit-transform: translateY(-100%);}
+  100% { 
+    transform: translateY(0); 
+    -webkit-transform: translateY(0);}
+}
